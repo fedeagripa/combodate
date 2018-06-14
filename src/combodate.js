@@ -361,9 +361,9 @@
 
             format = format === undefined ? this.options.format : format;
             if(format === null) {
-               return dt.isValid() ? dt : null;
+               return dt.format();
             } else {
-               return dt.isValid() ? dt.format(format) : '';
+               return dt.format(format);
             }
         },
 
@@ -504,7 +504,7 @@
 
     $.fn.combodate.defaults = {
          //in this format value stored in original input
-        format: 'DD-MM-YYYY HH:mm',
+        format: 'YYYY-MM-DD HH:mm',
         //in this format items in dropdowns are displayed
         template: 'D / MMM / YYYY   H : mm',
         //initial value, can be `new Date()`
